@@ -16,3 +16,29 @@ There are three files given to download: features.csv, stores.csv and test.csv,t
 <b>The Goal</b>
 
 Use historical markdown data to predict store sales
+
+
+# Deployment using Flask
+
+Project Structure This project has Three major parts :
+
+1.Walmart_sales_pred.ipynb - This contains code for our model to predict the Sales.
+
+2.appwal.py - This contains Flask APIs that receives the user's input, computes the sales based on our model and returns it.
+
+3.templates - This folder contains the HTML template to allow user to enter the details required and displays the Sales according to the input.
+
+Running the Project
+
+Run appwal.py
+
+You should be able to view the homepage as below :
+
+![walmartUI](https://user-images.githubusercontent.com/50323219/67513810-4051dc00-f6b9-11e9-807d-a792ad910099.JPG)
+
+Enter The details asked in the form and hit Predict
+
+The Sales predicted will be displayed:
+
+![WalmartPRED](https://user-images.githubusercontent.com/50323219/67513964-860ea480-f6b9-11e9-898c-24e1cccc59cb.JPG)
+
