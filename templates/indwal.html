@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <!-- <meta charset="UTF-8"> -->
+  <title>ML API</title><!-- 
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/stwal.css') }}"> -->
+  
+</head>
+
+<body>
+ <div >
+	<h1>Walmart Sales Prediction</h1>
+<!-- placeholder="1.0" step="0.01" min="0" max="10" -->
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">  
+      <input type="number" name="store" placeholder="Store" required="required" />
+        <input type="number" name="Dept" placeholder="Dept" required="required" />
+        <input type="date" name="Date" placeholder="Select Date" required="required" />
+        <!-- <input type="text" name="Weekly_Sales" placeholder="Weekly_Sales" required="required" /> -->
+        <input type="text" name="IsHoliday" placeholder="IsHoliday(True or False)" required="required" />
+        <input type="text" name="Type" placeholder="Type(A/B/C)" required="required" />
+        <input type="number" name="Size" placeholder="Size" required="required" />
+        <!-- <input type="number" name="Temperature" placeholder="Temperature" required="required" /> -->
+        <input type="number" name="Temperature" placeholder="Temperature" step="0.01" min="0" max="100"required="required"/>
+        <input type="number" name="Fuel_Price" placeholder="Fuel_Price" step="0.01" min="0" max="10000"required="required"/>
+        <input type="number" name="MarkDown1" placeholder="MarkDown1" required="required" step="0.01" min="0" max="1000000"/>
+        <input type="number" name="MarkDown2" placeholder="MarkDown2" required="required" step="0.01" min="0" max="1000000"/>
+        <input type="number" name="MarkDown3" placeholder="MarkDown3" required="required" step="0.01" min="0" max="1000000"/>
+        <input type="number" name="MarkDown4" placeholder="MarkDown4" required="required" step="0.01" min="0" max="1000000"/>
+        <input type="number" name="MarkDown5" placeholder="MarkDown5" required="required"step="0.01" min="0" max="1000000" />
+        <input type="number" name="CPI" placeholder="CPI" required="required" step="0.01" min="0" max="1000"/>
+        <input type="number" name="Unemployment" placeholder="Unemployment" required="required"step="0.01" min="0" max="1000"/>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+
+
+    	  
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
